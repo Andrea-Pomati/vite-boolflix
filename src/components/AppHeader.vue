@@ -14,6 +14,7 @@ export default {
 
     },
 
+    emits: ['searchMovieTitleEvent'],
 }
 
 
@@ -24,8 +25,8 @@ export default {
 
     <div id="search">
 
-        <input v-model="store.searchText" type="text" placeholder="Cerca un film per titolo">
-        <button>Cerca</button>
+        <input v-model="store.searchText" type="text" placeholder="Cerca un film per titolo" @keyup.enter="$emit('searchMovieTitleEvent')">
+        <button @click="$emit('searchMovieTitleEvent')">Cerca</button>
 
     </div>
 
