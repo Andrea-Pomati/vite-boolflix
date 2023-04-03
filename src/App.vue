@@ -30,6 +30,14 @@ export default {
 
   methods: {
 
+    search() {
+
+      this.searchMovieTitle();
+      this.searchSeriesTitle();
+
+
+    },
+
     searchMovieTitle() {
 
       this.store.path = "/search/movie";
@@ -45,6 +53,22 @@ export default {
       });
     },
 
+     searchSeriesTitle() {
+
+      this.store.path = "/search/tv";
+
+      this.store.queryParameters = "&query=" + encodeURIComponent(this.store.searchText);
+
+      console.log(this.store.baseApi + this.store.path + this.store.apiKey + this.store.queryParameters);
+
+      axios.get(this.store.baseApi + this.store.path + this.store.apiKey + this.store.queryParameters).then((response) =>{
+
+        console.log(response.data.results);
+
+        this.store.series = response.data.results;
+      });
+     },
+
   },
 }
 
@@ -52,7 +76,7 @@ export default {
 
 <template>
 
-<AppHeader @searchMovieTitleEvent="searchMovieTitle()"></AppHeader>
+<AppHeader @searchMovieTitleEvent="search()"></AppHeader>
 
 <AppMain></AppMain>
 

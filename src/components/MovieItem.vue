@@ -6,7 +6,7 @@ export default {
     name: "MovieItem",
     data () {
         return {
-
+            updatedLanguage: "",
           
         }
 
@@ -15,6 +15,56 @@ export default {
 
     props: {
         movie: Object,
+    },
+
+    mounted() {
+
+     
+
+
+    },
+
+    computed: {
+
+        updatedLanguage() {
+
+        // if(this.movie.original_language == "en"){
+
+        //    return "gb";
+
+        // } else if (this.movie.original_language == "ja") {
+
+        //    return "jp";
+
+        // } else {
+
+        //    return this.updatedLanguage = this.movie.original_language;
+
+        // }
+
+        switch(this.movie.original_language) {
+            case "en":
+                return "gb";
+                
+
+            case "ja":
+                return "jp";
+                
+
+            case "zh":
+                return "cn";
+
+            case "ko":
+                return "kr";    
+                
+                
+            default:
+                return this.movie.original_language;
+
+        }
+
+        },
+
     },
 }
 
@@ -30,7 +80,7 @@ export default {
     
     <small>({{ movie.original_title }})</small>
     
-    Lingua: {{ movie.original_language }}
+    <span :class="'fi fi-' + updatedLanguage"></span> 
 
     <em>Voto: {{ movie.vote_average }}</em>
 
@@ -46,6 +96,7 @@ export default {
         flex-flow: column;
         border:1px solid #aaa;
         width: 300px;
+        flex-shrink: 0;
         border-radius: 4px;
         padding: 10px;
 
