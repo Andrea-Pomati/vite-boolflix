@@ -42,7 +42,7 @@ export default {
 
       this.store.path = "/search/movie";
 
-      this.store.queryParameters = "&query=" + encodeURIComponent(this.store.searchText);
+      this.store.queryParameters = "&include_adult=false&query=" + encodeURIComponent(this.store.searchText);
 
       console.log(this.store.baseApi + this.store.path + this.store.apiKey + this.store.queryParameters);
 
@@ -57,7 +57,7 @@ export default {
 
       this.store.path = "/search/tv";
 
-      this.store.queryParameters = "&query=" + encodeURIComponent(this.store.searchText);
+      this.store.queryParameters = "&include_adult=false&query=" + encodeURIComponent(this.store.searchText);
 
       console.log(this.store.baseApi + this.store.path + this.store.apiKey + this.store.queryParameters);
 

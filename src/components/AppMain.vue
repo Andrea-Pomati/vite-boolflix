@@ -5,6 +5,8 @@ import SeriesItem from "./SeriesItem.vue";
 
 import {store} from '../store.js';
 
+import AppCard from "./appCard.vue";
+
 export default {
     name: "AppMain",
     data () {
@@ -20,6 +22,7 @@ export default {
 
         MovieItem,
         SeriesItem,
+        AppCard,
 
     },
 
@@ -42,8 +45,10 @@ export default {
     <!-- <li v-for="movie in store.movies" class="movie">
     {{movie.title}}
     </li> -->
+    <!-- <MovieItem v-for="movie in store.movies" :movie="movie" ></MovieItem> -->
+    
+    <AppCard v-for="movie in store.movies" :search-item="movie" :item-type="'movie'"></AppCard>
 
-        <MovieItem v-for="movie in store.movies" :movie="movie" ></MovieItem>
     </ul>
 </div>
 
@@ -64,7 +69,9 @@ export default {
 
     <ul>
 
-        <SeriesItem v-for="seriesItem in store.series" :series-item="seriesItem"></SeriesItem>
+        <!-- <SeriesItem v-for="seriesItem in store.series" :series-item="seriesItem"></SeriesItem> -->
+
+        <AppCard v-for="seriesItem in store.series" :search-item="seriesItem" :item-type="'series'"></AppCard>
 
     </ul>
 

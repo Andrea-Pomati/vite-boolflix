@@ -65,6 +65,12 @@ export default {
 
         },
 
+        posterPath() {
+
+            return "https://image.tmdb.org/t/p/" + "w342" + this.movie.poster_path;
+
+        },
+
     },
 }
 
@@ -74,7 +80,7 @@ export default {
 
 <template>
 
-<div class="movie">
+<li class="movie">
 
     <strong>{{ movie.title }}</strong>
     
@@ -84,7 +90,7 @@ export default {
 
     <em>Voto: {{ movie.vote_average }}</em>
 
-</div>
+</li>
 
 </template>
 
