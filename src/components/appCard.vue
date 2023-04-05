@@ -121,7 +121,7 @@ export default {
 
     flex-shrink: 0;
     border-radius: 4px;
-
+    
    
   
 
@@ -137,10 +137,12 @@ export default {
     background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
     padding: 10px;
     padding-bottom: 180px;
-
-    
-
+   
 }
+
+
+
+
 
 #contain-overview {
     height: 100px;
