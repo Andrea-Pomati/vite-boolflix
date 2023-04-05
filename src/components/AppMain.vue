@@ -34,7 +34,7 @@ export default {
 
 <template>
 
-<h1>Boolflix</h1>
+
 
 <div id="movies-list" v-if="store.movies.length > 0">
 
@@ -95,13 +95,18 @@ export default {
     width: auto;
     
     overflow-x: auto;
-
+    // padding: 0 50px; //centrare carosello
 }
 
 #movies-list {
 
+    h2 {
+        padding: 20px 0;
+        color: red;
+    }
+
     margin-bottom: 2em;
-   
+    padding: 0 50px; //centrare carosello
     ul {
      @include elementsList();
     }
@@ -110,8 +115,14 @@ export default {
 
 
 #series-list {
+
+    h2 {
+        padding: 20px 0;
+        color: red;
+    }
+
     margin-top: 2em;
-   
+    padding: 0 50px; //centrare carosello
     ul {
         @include elementsList();
 

@@ -95,7 +95,10 @@ export default {
 
         <em>Voto: <i v-for="number in starRating" class="fa-solid fa-star"></i><i v-for="number in 5 - starRating" class="fa-regular fa-star"></i></em>
 
-      
+        <div id="contain-overview">
+        <small class="overview" v-if="itemType == 'movie'">{{ searchItem.overview }}</small>
+        <small class="overwiew" v-if="itemType == 'series'">{{ searchItem.overview }}</small>
+        </div>   
 
     </div>
 
@@ -118,6 +121,8 @@ export default {
 
     flex-shrink: 0;
     border-radius: 4px;
+
+   
   
 
 
@@ -125,6 +130,7 @@ export default {
 }
 
 .text-container {
+    
     display: flex;
     flex-flow: column;
 
@@ -132,7 +138,13 @@ export default {
     padding: 10px;
     padding-bottom: 180px;
 
+    
 
+}
+
+#contain-overview {
+    height: 100px;
+    overflow:auto;
 }
 
 </style>

@@ -22,18 +22,38 @@ export default {
 
 
 <template>
+    <!-- flex navbar -->
+    <nav>
+        <h1>Boolflix</h1>  
+        <div id="search">
 
-    <div id="search">
+            <input v-model="store.searchText" type="text" placeholder="Cerca un film per titolo" @keyup.enter="$emit('searchMovieTitleEvent')">
+            <button @click="$emit('searchMovieTitleEvent')">Cerca</button>
 
-        <input v-model="store.searchText" type="text" placeholder="Cerca un film per titolo" @keyup.enter="$emit('searchMovieTitleEvent')">
-        <button @click="$emit('searchMovieTitleEvent')">Cerca</button>
-
-    </div>
-
+        </div>
+    </nav>
+    <!-- /flex navbar -->
 </template>
 
 
 <style lang="scss" scoped>
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 50px;
+    background-color: #000000;
+    
+
+    h1 {
+        color: red;
+        
+    }
+
+}
 
 #search {
     display: flex;
@@ -43,13 +63,14 @@ export default {
     input {
         width: 200px;
         background-color: #242424;
-        color: white;
+        color: rgb(255, 137, 137);
+        border-color: red;
        
     }
 
     button {
         background-color: #242424;
-        color: white;
+        color: rgb(249, 0, 0);
 
     }
 }
